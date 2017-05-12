@@ -7,8 +7,7 @@
 
 #Sigmoid units used in hidden and output layer. gradient descent and stocastic gradient descent functions implemented with momentum
 
-
-#Multi-task learning for modular neural networks.
+ 
 
 from expdata import setexperimentdata
 
@@ -288,10 +287,10 @@ def main():
 
 	#os.remove('out2_randomdepth.txt')
         np.random.seed()
-	maxEpoch = np.array([500,500,1000,2000,3000,500,2000,500,300,500,200, 2000, 2000])
+	maxEpoch = np.array([500,500 ])
         learnRate = 0.5
-        fileout1 =  open('out1.txt','a')
-        fileout2 =  open('out2_evaltrans_fixeddepth.txt','a')
+        fileout1 =  open('out1_res.txt','a')
+        fileout2 =  open('out2_res.txt','a')
 
         moduledecomp = [0.25, 0.5, 0.75, 1]  # decide what will be number of features for each group of taskdata correpond to module
 
@@ -339,7 +338,7 @@ def main():
 
 
 
-        	for transKnow in xrange(0, 2  ): # transKnow = 0 # 1 is for MT knowledge transfer. 0 is for no transfer (simple ensemble learning)
+        	for transKnow in xrange(1, 2  ): # transKnow = 0 # 1 is for MT knowledge transfer. 0 is for no transfer (simple ensemble learning)
         		for run in xrange(0, MaxRun  ):
         			mt = MTnetwork(mtaskNet, TrainData, TestData, MaxTime,MinCriteria,learnRate, numModules,transKnow)
         			(erPlot, trainMSE[run,:], trainPerf[run,:], testMSE[run,:], testPerf[run,:]) = mt.mainAlg()
