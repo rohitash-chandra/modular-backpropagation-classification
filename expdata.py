@@ -10,12 +10,12 @@ def setexperimentdata(problem):
  
 
     if problem == 0:
-       TrDat= np.loadtxt("iristrain.txt") #  iris dataset
-       TsDat = np.loadtxt("iristest.txt") #  
+       TrDat= np.loadtxt("Iris/train.txt") #  iris dataset
+       TsDat = np.loadtxt("Iris/test.txt") #  
 
     elif problem == 1:
-       TrDat = np.loadtxt("winetrain.txt") #  Wine data
-       TsDat = np.loadtxt("winetest.txt") #  
+       TrDat = np.loadtxt("Wine/train.txt") #  Wine data
+       TsDat = np.loadtxt("Wine/test.txt") #  
 	 
  
     return [TrainData, TestData, baseNet]
